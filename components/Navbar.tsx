@@ -65,10 +65,12 @@ export default function Navbar() {
                   href={link.href}
                   target={link.isExternal ? "_blank" : undefined}
                   rel={link.isExternal ? "noopener noreferrer" : undefined}
-                  className={`flex items-center gap-1.5 text-[14px] font-medium transition-colors border-b border-transparent ${
-                    isTransparent 
-                      ? 'text-white/80 hover:text-white' 
-                      : 'text-gray-500 hover:text-[#0A1931]'
+                  className={`flex items-center gap-1.5 text-[14px] font-medium transition-colors px-3 py-1.5 rounded-md ${
+                    pathname === link.href 
+                      ? 'border border-[#0057D9] text-[#0057D9]' 
+                      : isTransparent 
+                        ? 'text-white/80 hover:text-white border border-transparent' 
+                        : 'text-gray-500 hover:text-[#0A1931] border border-transparent'
                   }`}
                 >
                   {link.name}
@@ -134,7 +136,11 @@ export default function Navbar() {
                 href={link.href}
                 target={link.isExternal ? "_blank" : undefined}
                 rel={link.isExternal ? "noopener noreferrer" : undefined}
-                className="flex items-center justify-between px-4 py-4 text-lg font-semibold text-gray-800 hover:text-[#0057D9] hover:bg-blue-50 rounded-2xl transition-colors"
+                className={`flex items-center justify-between px-4 py-4 text-lg font-semibold rounded-2xl transition-colors ${
+                  pathname === link.href
+                    ? 'text-[#0057D9] bg-blue-50 border border-[#0057D9]'
+                    : 'text-gray-800 hover:text-[#0057D9] hover:bg-blue-50 border border-transparent'
+                }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
