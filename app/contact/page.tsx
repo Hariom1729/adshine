@@ -46,154 +46,144 @@ export default function ContactPage() {
       </section>
 
       {/* ── MAIN CONTACT SECTION ── */}
-      <section className="bg-white mb-20 lg:mb-32 relative -mt-12 z-20">
-        <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12">
-          <div className="bg-gradient-to-br from-[#F4F7FB] to-[#F8FAFC] rounded-[2.5rem] p-4 md:p-6 lg:p-8 border border-blue-50 shadow-xl shadow-blue-900/5">
+      <section className="bg-white py-12 lg:py-16 mb-12 z-20">
+        <div className="w-full max-w-[1200px] mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-start">
             
-            <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+            {/* Left Column: Form Side */}
+            <div className="bg-[#F8FAFC] rounded-[1.5rem] p-8 md:p-10 border border-[#E2E8F0] shadow-sm">
+              <h2 className="text-[26px] lg:text-[30px] font-bold text-[#0A1931] tracking-tight mb-8">
+                Send us a Message
+              </h2>
               
-              {/* Left Column: Contact Info Base (Deep Blue Box) */}
-              <div className="lg:col-span-5 bg-gradient-to-b from-[#0A1931] to-[#15305B] rounded-[2rem] p-10 sm:p-14 text-white flex flex-col justify-between relative overflow-hidden h-full shadow-lg">
-                
-                {/* Decorative Accents */}
-                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[80px] -mr-32 -mt-32 pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-sky-400/10 rounded-full blur-[60px] -ml-20 -mb-20 pointer-events-none"></div>
-
-                <div className="relative z-10">
-                  <h2 className="text-[32px] lg:text-[40px] font-medium text-white mb-6 leading-tight tracking-tight drop-shadow-sm">
-                    Contact <br />Information
-                  </h2>
-                  <p className="text-[16px] text-blue-100/80 font-medium leading-relaxed mb-16 max-w-sm">
-                    Fill up the form and our team will get back to you within 24 hours.
-                  </p>
-
-                  <div className="space-y-12">
-                    <div className="flex items-start gap-6 group cursor-pointer">
-                      <div className="w-12 h-12 rounded-full bg-white/10 group-hover:bg-[#0057D9] transition-colors duration-300 flex items-center justify-center shrink-0 border border-white/20 shadow-inner">
-                        <Phone className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-[12px] font-bold text-blue-200/60 uppercase tracking-[0.2em] mb-2">Phone</h3>
-                        <p className="text-[18px] font-medium text-white shadow-sm">+91 123 456 7890</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-6 group cursor-pointer">
-                      <div className="w-12 h-12 rounded-full bg-white/10 group-hover:bg-[#0057D9] transition-colors duration-300 flex items-center justify-center shrink-0 border border-white/20 shadow-inner">
-                        <Mail className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-[12px] font-bold text-blue-200/60 uppercase tracking-[0.2em] mb-2">Email</h3>
-                        <p className="text-[18px] font-medium text-white shadow-sm">info@adshinepharma.com</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-6 group cursor-pointer">
-                      <div className="w-12 h-12 rounded-full bg-white/10 group-hover:bg-[#0057D9] transition-colors duration-300 flex items-center justify-center shrink-0 border border-white/20 mt-1 shadow-inner">
-                        <MapPin className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-[12px] font-bold text-blue-200/60 uppercase tracking-[0.2em] mb-2">Headquarters</h3>
-                        <p className="text-[16px] font-medium text-white leading-relaxed shadow-sm">
-                          No. 123, Industrial Area,<br />
-                          Mysuru, Karnataka – 570001
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                {/* Name */}
+                <div className="space-y-1.5">
+                  <label htmlFor="name" className="text-[13px] font-bold text-[#0A1931]">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="w-full bg-white border border-[#CBD5E1] rounded-xl px-4 py-3.5 text-[15px] text-[#0A1931] font-medium focus:ring-2 focus:ring-[#10B981] focus:border-[#10B981] transition-all outline-none"
+                    placeholder="John Doe"
+                    required
+                  />
                 </div>
-              </div>
 
-              {/* Right Column: Form Side (White Box) */}
-              <div className="lg:col-span-7 bg-white rounded-[2rem] p-10 sm:p-14 lg:p-16 border border-[#E2E8F0] relative shadow-sm">
-                <h2 className="text-[28px] lg:text-[36px] font-medium text-[#0A1931] tracking-tight mb-4 leading-snug">
-                  Send us a message
-                </h2>
-                <p className="text-[16px] text-slate-500 font-medium mb-12">
-                  We're here to help and answer any question you might have.
-                </p>
-                
-                <form className="space-y-10" onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    {/* Name */}
-                    <div className="space-y-3 relative group">
-                      <label htmlFor="name" className="text-[12px] font-bold text-slate-400 uppercase tracking-[0.2em] block group-focus-within:text-[#0057D9] transition-colors">
-                        Your Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="w-full bg-transparent border-0 border-b border-slate-200 px-0 py-2 text-[18px] text-[#0A1931] font-medium focus:ring-0 focus:border-[#0057D9] transition-colors placeholder:text-slate-300 placeholder:font-normal outline-none"
-                        placeholder="John Doe"
-                        required
-                      />
-                    </div>
+                {/* Email */}
+                <div className="space-y-1.5">
+                  <label htmlFor="email" className="text-[13px] font-bold text-[#0A1931]">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="w-full bg-white border border-[#CBD5E1] rounded-xl px-4 py-3.5 text-[15px] text-[#0A1931] font-medium focus:ring-2 focus:ring-[#10B981] focus:border-[#10B981] transition-all outline-none"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </div>
 
-                    {/* Email */}
-                    <div className="space-y-3 relative group">
-                      <label htmlFor="email" className="text-[12px] font-bold text-slate-400 uppercase tracking-[0.2em] block group-focus-within:text-[#0057D9] transition-colors">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        className="w-full bg-transparent border-0 border-b border-slate-200 px-0 py-2 text-[18px] text-[#0A1931] font-medium focus:ring-0 focus:border-[#0057D9] transition-colors placeholder:text-slate-300 placeholder:font-normal outline-none"
-                        placeholder="john@example.com"
-                        required
-                      />
-                    </div>
-                  </div>
+                {/* Subject */}
+                <div className="space-y-1.5">
+                  <label htmlFor="subject" className="text-[13px] font-bold text-[#0A1931]">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    className="w-full bg-white border border-[#CBD5E1] rounded-xl px-4 py-3.5 text-[15px] text-[#0A1931] font-medium focus:ring-2 focus:ring-[#10B981] focus:border-[#10B981] transition-all outline-none"
+                    placeholder="Product Inquiry"
+                    required
+                  />
+                </div>
 
-                  {/* Message */}
-                  <div className="space-y-3 relative group">
-                    <label htmlFor="message" className="text-[12px] font-bold text-slate-400 uppercase tracking-[0.2em] block group-focus-within:text-[#0057D9] transition-colors">
-                      Your Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      className="w-full bg-transparent border-0 border-b border-slate-200 px-0 py-2 text-[18px] text-[#0A1931] font-medium focus:ring-0 focus:border-[#0057D9] transition-colors resize-none placeholder:text-slate-300 placeholder:font-normal outline-none"
-                      placeholder="How can we help you?"
-                      required
-                    ></textarea>
-                  </div>
+                {/* Message */}
+                <div className="space-y-1.5">
+                  <label htmlFor="message" className="text-[13px] font-bold text-[#0A1931]">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    className="w-full bg-white border border-[#CBD5E1] rounded-xl px-4 py-3.5 text-[15px] text-[#0A1931] font-medium focus:ring-2 focus:ring-[#10B981] focus:border-[#10B981] transition-all outline-none resize-none"
+                    placeholder="Your message here..."
+                    required
+                  ></textarea>
+                </div>
 
-                  {/* Submit Button */}
-                  <div className="pt-8">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting || submitted}
-                      className="group h-[54px] lg:h-[60px] px-10 rounded-full bg-[#0057D9] text-white font-semibold text-[15px] lg:text-[16px] flex items-center justify-center gap-3 transition-all duration-300 hover:bg-[#0047B3] hover:shadow-lg hover:shadow-blue-500/20 disabled:opacity-70 disabled:hover:shadow-none"
-                    >
-                      {isSubmitting ? (
-                        'Sending...'
-                      ) : submitted ? (
-                        'Message Sent!'
-                      ) : (
-                        <>
-                          Send Message
-                          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </form>
+                {/* Submit Button */}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || submitted}
+                    className="w-full h-[54px] rounded-xl bg-[#10B981] text-white font-bold text-[16px] transition-all hover:bg-[#059669] disabled:opacity-70 shadow-md flex justify-center items-center"
+                  >
+                    {isSubmitting ? 'Sending...' : submitted ? 'Message Sent!' : 'Submit Message'}
+                  </button>
+                </div>
+              </form>
+            </div>
 
-                {/* Success Alert */}
-                <div className={`absolute bottom-10 right-10 bg-white border border-[#E2E8F0] text-[#0A1931] px-6 py-4 rounded-[1.25rem] shadow-xl shadow-blue-900/10 flex items-center gap-4 transition-all duration-500 transform ${submitted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0 pointer-events-none'}`}>
-                  <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center shrink-0 border border-green-100">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
+            {/* Right Column: Contact Info Side */}
+            <div className="py-4 lg:py-8 lg:pl-4">
+              <h2 className="text-[26px] lg:text-[30px] font-bold text-[#0A1931] tracking-tight mb-10">
+                Get In Touch
+              </h2>
+
+              <div className="space-y-8 mb-12">
+                {/* Office */}
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-[1rem] bg-emerald-100 text-emerald-500 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[14px]">Success</h4>
-                    <p className="text-[13px] text-slate-500 font-medium">Your message has been sent!</p>
+                    <h3 className="text-[16px] font-bold text-[#0A1931] mb-1">Corporate Office</h3>
+                    <p className="text-[14px] text-slate-500 font-medium leading-relaxed">
+                      No. 123, Industrial Area,<br />
+                      Mysuru - 570001, Karnataka, India
+                    </p>
                   </div>
                 </div>
 
+                {/* Phone */}
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-[1rem] bg-sky-100 text-sky-500 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-[16px] font-bold text-[#0A1931] mb-1">Phone Line</h3>
+                    <p className="text-[14px] text-slate-500 font-medium">+91 123 456 7890</p>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-[1rem] bg-purple-100 text-purple-500 flex items-center justify-center shrink-0">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-[16px] font-bold text-[#0A1931] mb-1">Email Support</h3>
+                    <p className="text-[14px] text-slate-500 font-medium">info@adshinepharma.com</p>
+                  </div>
+                </div>
               </div>
+
+              {/* WhatsApp Button */}
+              <a 
+                href="https://wa.me/919876543210" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full bg-[#10B981] hover:bg-[#059669] text-white h-[54px] rounded-xl font-bold text-[16px] flex items-center justify-center gap-2 transition-colors shadow-lg shadow-emerald-500/20"
+              >
+                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.662-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                Chat on WhatsApp
+              </a>
             </div>
 
           </div>

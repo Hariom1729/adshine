@@ -29,7 +29,7 @@ export default function Navbar() {
     { name: "Products", href: "/products", hasDropdown: true },
     { name: "About Us", href: "/about" },
     { name: "Careers", href: "https://wa.me/919876543210", isExternal: true },
-    { name: "Contact", href: "https://wa.me/919876543210", isExternal: true },
+    { name: "Contact", href: "/contact" },
   ];
 
   const isTransparent = isHome && !scrolled;
@@ -37,24 +37,23 @@ export default function Navbar() {
   return (
     <>
       <nav 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out border-b ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 border-b ${
           isTransparent 
-            ? "bg-transparent border-transparent py-4" 
-            : "bg-white/95 backdrop-blur-md  py-0"
+            ? "bg-transparent border-transparent" 
+            : "bg-white/95 backdrop-blur-md"
         }`}
       >
-        <div className={`max-w-[1600px] mx-auto px-6 lg:px-12 flex items-center justify-between transition-all duration-500 ${isTransparent ? 'h-40 sm:h-44 lg:h-52' : 'h-24 sm:h-28 lg:h-36'}`}>
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex items-center justify-between h-20 sm:h-24">
           {/* Logo */}
           <Link href="/" className="flex flex-shrink-0 items-center gap-2">
             <div className="flex flex-col items-center gap-0.5">
-              <div className={`relative overflow-hidden transition-all duration-500 ease-out flex items-center ${isTransparent ? 'h-28 sm:h-32 lg:h-40' : 'h-20 sm:h-24 lg:h-32'}`}>
+              <div className="relative overflow-hidden flex items-center h-16 sm:h-20">
                 <img
                   src="/logo%20adshine.jpeg"
                   alt="Adshine Pharmaceuticals Logo"
                   className="h-full w-auto object-contain py-1"
                 />
               </div>
-            
             </div>
           </Link>
 

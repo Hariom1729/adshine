@@ -4,16 +4,16 @@ export default function FounderMessage() {
     <section className="bg-white font-sans">
       <div className="w-full max-w-[1600px] mx-auto px-3 md:px-4 lg:px-6 mb-8">
         <div className="bg-[#F4F7FB] rounded-[2.5rem] rounded-tl-[0] rounded-tr-[0] py-16 lg:py-24 px-8 md:px-16 lg:px-24">
-          <div className="grid lg:grid-cols-[1fr_1.1fr] gap-12 xl:gap-24 items-center">
+          <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 xl:gap-20 items-center">
           
           {/* Left — Photo with smooth zoom effect */}
-          <div className="relative rounded-[2.5rem] overflow-hidden h-[400px] lg:h-[480px] xl:h-[560px] group shadow-[0_20px_40px_-15px_rgba(10,25,49,0.15)] bg-[#0A1931]">
+          <div className="relative rounded-[2.5rem] overflow-hidden h-[300px] lg:h-[360px] xl:h-[420px] group shadow-[0_20px_40px_-15px_rgba(10,25,49,0.15)] bg-[#0A1931]">
             <Image
-              src="https://cjlpsqzjtchvpckpyllb.supabase.co/storage/v1/object/public/sentia/logo.png"
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800"
               alt="Founder of Adshine Pharmaceuticals"
               fill
               unoptimized
-              className="object-cover object-top"
+              className="object-cover object-center"
             />
             {/* Bottom gradient for name plate */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A1931]/90 via-[#0A1931]/30 to-transparent transition-opacity duration-700 opacity-90 group-hover:opacity-100" />

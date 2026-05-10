@@ -72,7 +72,7 @@ export default function Hero() {
         ========================================
       */}
       <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 py-16 md:py-24 bg-white relative z-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {/* Card 1: Gynaecology */}
           <Link href="/products?tab=gynaec" className="relative h-[280px] rounded-[1.5rem] overflow-hidden group block shadow-md">
             <Image src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800" fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover transition-transform duration-700 group-hover:scale-105" alt="Gynaecology Management" />
@@ -98,30 +98,6 @@ export default function Hero() {
               <p className="text-white/80 font-medium text-sm leading-snug">Bone health & mobility support</p>
             </div>
           </Link>
-          
-          {/* Card 3: Review */}
-          <div className="relative h-[280px] rounded-[1.5rem] bg-gradient-to-br from-[#F4F7FB] to-[#E2E8F0] p-6 lg:p-7 flex flex-col justify-between border border-blue-100 shadow-md">
-            <div className="flex justify-between items-start">
-              <p className="text-[13px] font-semibold text-blue-600 tracking-wide uppercase">Trusted by specialists</p>
-            </div>
-            <div>
-              <p className="text-lg md:text-[1.05rem] font-medium text-[#0A1931] mb-6 leading-snug">
-                "Adshine's formulations bring an unparalleled level of clinical efficacy we trust."
-              </p>
-              <div className="flex justify-between items-end">
-                <div className="flex items-center gap-3">
-                  <div className="flex -space-x-2">
-                    <Image width={36} height={36} className="rounded-full border-2 border-white object-cover shadow-sm bg-white" src="https://images.unsplash.com/photo-1537368910025-702800d98ce7?q=80&w=100&auto=format&fit=crop" alt="Doctor" />
-                    <Image width={36} height={36} className="rounded-full border-2 border-white object-cover shadow-sm bg-white" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=100&auto=format&fit=crop" alt="Doctor" />
-                  </div>
-                  <span className="text-xs font-bold text-[#0A1931]">500+ Doctors</span>
-                </div>
-                <div className="text-blue-200 font-serif text-6xl leading-none tracking-tighter absolute -bottom-4 right-4">
-                  &rdquo;
-                </div>
-              </div>
-            </div>
-          </div>
           
           {/* Card 4: Physician */}
           <Link href="/products?tab=physician" className="relative h-[280px] rounded-[1.5rem] overflow-hidden group block shadow-md">

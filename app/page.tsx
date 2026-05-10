@@ -3,7 +3,7 @@
 import Hero from "@/components/Hero";
 import StatsCounter from "@/components/StatsCounter";
 import AboutSection from "@/components/AboutSection";
-import ProductDivisions from "@/components/ProductDivisions";
+import Accreditations from "@/components/Accreditations";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import QualitySection from "@/components/QualitySection";
 import CTAStrip from "@/components/CTAStrip";
@@ -21,7 +21,7 @@ export default function Home() {
         {/* <StatsCounter /> */}
         <AboutSection />
         <FounderMessage />
-        <ProductDivisions />
+        <Accreditations />
         <WhyChooseUs />
         {/* <QualitySection /> */}
         <CTAStrip />

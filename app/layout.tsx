@@ -10,6 +10,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://adshinepharma.com"),
   title: "Adshine Pharmaceuticals | Creating Healthy Lives",
   description:
     "Adshine Pharmaceuticals delivers GMP-certified, science-backed medicines across General Physician and Gynecology specialties across India.",
