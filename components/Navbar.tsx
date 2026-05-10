@@ -53,7 +53,7 @@ export default function Navbar() {
                   href={link.href}
                   target={link.isExternal ? "_blank" : undefined}
                   rel={link.isExternal ? "noopener noreferrer" : undefined}
-                  className={`flex items-center gap-1.5 text-[14px] font-bold transition-colors px-3 py-1 rounded-md ${
+                  className={`flex items-center gap-1.5 text-[14px] leading-none font-bold transition-colors px-3 py-0.5 rounded-md ${
                     pathname === link.href 
                       ? 'border border-[#0057D9] text-[#0057D9] bg-white shadow-sm'
                       : 'text-gray-600 hover:text-[#0A1931] border border-transparent'
