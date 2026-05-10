@@ -15,14 +15,10 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    if (isHome) {
-      handleScroll();
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      return () => window.removeEventListener("scroll", handleScroll);
-    } else {
-      setScrolled(true); // non-home pages always look scrolled (solid)
-    }
-  }, [isHome]);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -32,17 +28,9 @@ export default function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
-  const isTransparent = isHome && !scrolled;
-
   return (
     <>
-      <nav 
-        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 border-b ${
-          isTransparent 
-            ? "bg-transparent border-transparent" 
-            : "bg-white/95 backdrop-blur-md"
-        }`}
-      >
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 shadow-sm transition-all duration-300">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex items-center justify-between h-20 sm:h-24">
           {/* Logo */}
           <Link href="/" className="flex flex-shrink-0 items-center gap-2">
@@ -65,12 +53,10 @@ export default function Navbar() {
                   href={link.href}
                   target={link.isExternal ? "_blank" : undefined}
                   rel={link.isExternal ? "noopener noreferrer" : undefined}
-                  className={`flex items-center gap-1.5 text-[14px] font-medium transition-colors px-3 py-1.5 rounded-md ${
+                  className={`flex items-center gap-1.5 text-[14px] font-bold transition-colors px-4 py-1.5 rounded-full ${
                     pathname === link.href 
-                      ? (isTransparent ? 'border border-white text-white' : 'border border-[#0057D9] text-[#0057D9]')
-                      : isTransparent 
-                        ? 'text-white/80 hover:text-white border border-transparent' 
-                        : 'text-gray-500 hover:text-[#0A1931] border border-transparent'
+                      ? 'border border-[#0057D9] text-[#0057D9] bg-white shadow-sm'
+                      : 'text-gray-600 hover:text-[#0A1931] border border-transparent'
                   }`}
                 >
                   {link.name}
@@ -102,11 +88,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4 flex-shrink-0">
             <Link 
               href="mailto:adshinepharamaceutical@gmail.com" 
-              className={`group flex items-center gap-2 h-[44px] px-6 rounded-full font-semibold transition-all duration-300 ${
-                isTransparent 
-                  ? 'bg-blue-500 text-white' 
-                  : 'bg-blue-500 text-white hover:bg-blue-600'
-              }`}
+              className="group flex items-center gap-2 h-[44px] px-6 rounded-full font-semibold transition-all duration-300 bg-[#00BFA5] text-white hover:bg-[#009E89] shadow-md hover:shadow-lg"
             >
               Quick Enquiry
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -115,7 +97,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className={`md:hidden p-2 rounded-lg transition-colors ${isTransparent ? 'text-white hover:bg-white/10' : 'text-gray-600 hover:bg-gray-100'}`}
+            className="md:hidden p-2 rounded-lg transition-colors text-gray-600 hover:bg-gray-100"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -123,8 +105,8 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* spacer missing for home intentionally to allow bleeding behind navbar */}
-      {!isHome && <div className="h-20" />}
+      {/* spacer to prevent content from going behind the fixed navbar */}
+      <div className="h-20 sm:h-24" />
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
