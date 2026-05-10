@@ -168,11 +168,11 @@ function ProductsContent() {
               key={`${product.division}-${product.id}`}
               className="bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col hover:shadow-lg transition-shadow group"
             >
-              <div className="bg-white p-6 relative border-b border-gray-100 flex justify-center items-center min-h-[200px]">
+              <div className="bg-white p-4 relative border-b border-gray-100 flex justify-center items-center h-[260px]">
                 <img 
                   src={product.image || "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500&q=80"} 
                   alt={product.name}
-                  className="w-full h-auto max-h-[280px] object-contain group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
