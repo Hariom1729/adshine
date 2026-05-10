@@ -67,7 +67,7 @@ export default function Navbar() {
                   rel={link.isExternal ? "noopener noreferrer" : undefined}
                   className={`flex items-center gap-1.5 text-[14px] font-medium transition-colors px-3 py-1.5 rounded-md ${
                     pathname === link.href 
-                      ? 'border border-[#0057D9] text-[#0057D9]' 
+                      ? (isTransparent ? 'border border-white text-white' : 'border border-[#0057D9] text-[#0057D9]')
                       : isTransparent 
                         ? 'text-white/80 hover:text-white border border-transparent' 
                         : 'text-gray-500 hover:text-[#0A1931] border border-transparent'
